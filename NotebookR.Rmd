@@ -1,0 +1,44 @@
+```{r}
+dados <- read.csv("https://raw.githubusercontent.com/andrefcmoraes/phys.i/main/Raw%20Data5.csv", sep = ",")
+plot(dados[,1],
+     dados[,4],
+     type = "l",
+     lwd = 2,
+     col = "red",
+     ylab = "Aceleration g (m/s^2)",
+     xlab = "Time (s)",
+     main = "EXPERIMENTO 9"
+)
+```
+```{r}
+plot(dados[,1],
+     dados[,4],
+     lwd = 2,
+     col = "red",
+     ylab = "Aceleration g (m/s^2)",
+     xlab = "Time (s)",
+     xlim = c(1, 4),
+     ylim = c(0, 10),
+     main = "DADOS EXPERIMENTO 5"
+    )
+```
+```{r}
+#Modelo
+
+ModelGrav <- function(t) {
+    
+    out <- ifelse(t > 2 &t <= 3, 0, 9.81)
+}
+
+t = seq(1, 4, by = 0.05)
+
+plot(t,ModelGrav(t),
+    xlab = "Tempo (s)",
+    ylab = "Aceleração g (m/s^2)",
+    lwd = 3,
+    main = "MODELO FÍSICO")
+```
+```{r}
+
+```
+
